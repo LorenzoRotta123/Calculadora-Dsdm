@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/css?family=Bungee Inline" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="utf-8">
+	<title>Calculadora Top</title>
+</head>
+<body id="backfleunes">
+
+	<main>
+		<section>
+			<article id="article1">
+				<h1> Calculadora de Capacidade Térmica </h1>
+				<p> Fórmula: </p>
+				<p> C = m.c </p>
+				<p> C = Capacidade Térmica </p>
+				<p> m = Massa </p>
+				<p> c = Calor Específico</p>
+			</article>
+
+			<article id="article2">
+				<form>
+					<br>Capac. Term:
+					<input type="number" name="CapacTerm" id="C" value="0.0">
+					<br>Massa:
+					<input type="number" name="massa" id="m" value="0.0">
+					<br>Calor Esp:
+					<input type="number" name="calorEsp" id="c" value="0.0">
+				</form>
+			</article>
+
+			<article id="article3">
+				<p> Resultado: </p>
+				<p id="result"></p>
+			</article>
+
+			<article id="article4">
+				<button onclick="calcular()"> Calcular </button>
+			</article>
+		</section>
+	</main>
+
+	<script>
+		function calcular() {
+
+		var CapacTerm = document.getElementById('C');
+		var massa = document.getElementById('m');
+		var calorEsp = document.getElementById('c');
+		var result = document.getElementById('result');
+
+		var CapacTerm2 = parseFloat(CapacTerm.value);
+		var massa2 = parseFloat(massa.value);
+		var calorEsp2 = parseFloat(calorEsp.value);
+
+			if (CapacTerm2 == 0.0) {
+				var resposta1 = massa2 * calorEsp2;
+				result.innerHTML = "Capac. Term = " + resposta1 + " cal/°C";
+			}
+
+			if (massa2 == 0.0) {
+				var resposta2 = CapacTerm2 / calorEsp2;
+				result.innerHTML = "Massa = " + resposta2 + " g";
+			}
+
+			if (calorEsp2 == 0.0) {
+				var resposta3 = CapacTerm2 / massa2;
+				result.innerHTML = "Calor Esp = " + resposta3 + " cal/g°C";
+			}
+		}
+	</script>
+
+
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>
